@@ -1,0 +1,39 @@
+﻿@inherits LayoutComponentBase
+@using Microsoft.FluentUI.AspNetCore.Components
+
+<FluentLayout>
+    <FluentHeader Class="main-header">
+        <FluentStack JustifyContent="JustifyContent.SpaceBetween" Style="width: 100%; align-items: center;">
+            <div class="logo-area">
+                @* TODO: Erstatt med faktisk logo/bilde *@
+                <FluentAnchor Href="/" Appearance="Appearance.Hypertext" Style="text-decoration: none; font-weight: bold; font-size: 1.2em;">
+                    LadeAdmin
+                </FluentAnchor>
+            </div>
+            <div class="user-info-area">
+                @* TODO: Erstatt med dynamisk brukerinfo *@
+                <FluentPersona Name="Admin Bruker" Status="PresenceStatus.Available" />
+            </div>
+        </FluentStack>
+    </FluentHeader>
+
+    <FluentStack Class="main-stack" Orientation="Orientation.Horizontal" Style="height: calc(100vh - 60px);">
+        @* Juster høyden basert på header-høyden *@
+        <FluentNavMenu Width="250" Title="Navigasjon" Collapsible="true">
+            <FluentNavLink Href="/" Match="NavLinkMatch.All" Icon="@(new Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.Size24.Home())" IconColor="Color.Accent">Dashbord</FluentNavLink>
+            <FluentNavLink Href="/users" Icon="@(new Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.Size24.People())" IconColor="Color.Accent">Brukere</FluentNavLink>
+            <FluentNavLink Href="/chargers" Icon="@(new Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.Size24.VehicleCarProfileLtrClock())" IconColor="Color.Accent">Ladere</FluentNavLink>
+            <FluentNavLink Href="/sessions" Icon="@(new Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.Size24.ClipboardTextLtr())" IconColor="Color.Accent">Ladeøkter</FluentNavLink>
+            @* TODO: Legg til flere navigasjonslenker her *@
+        </FluentNavMenu>
+
+        <FluentBodyContent Style="padding: 20px; overflow-y: auto;">
+            @* Her lastes innholdet (sidene) dynamisk inn *@
+            @Body
+        </FluentBodyContent>
+    </FluentStack>
+</FluentLayout>
+
+<FluentDialogProvider /> @* Nødvendig for dialoger etc. *@
+<FluentToastProvider /> @* Nødvendig for toast-meldinger *@
+<FluentTooltipProvider /> @* Nødvendig for tooltips *@

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:imicCharge.APP"
+             xmlns:controls="clr-namespace:imicCharge.APP.Controls"
+             x:Class="imicCharge.APP.LoginPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource FirdaPrimaryDarkBlue}">
+
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Padding="30,20" Spacing="3" VerticalOptions="Center">
+                <Image Source="logo_firda.png" HeightRequest="70" Margin="0,30,0,10" HorizontalOptions="Center" SemanticProperties.Description="Firda Seafood logo" />
+                <Label Text="Firda CarCharge" TextColor="White" FontSize="19" Margin="0" FontAttributes="Bold" HorizontalOptions="Center" />
+                <Label Text="Ei ladeteneste frå Firda Seafood Group" TextColor="Gray" FontSize="12" Margin="0,0,0,30" FontAttributes="None" HorizontalOptions="Center" />
+                <Border BackgroundColor="#1C2251" Padding="0" StrokeShape="RoundRectangle 10,10,10,10" StrokeThickness="0">
+                    <VerticalStackLayout Spacing="10">
+                        <Entry x:Name="EmailEntry" Placeholder="✉ E-post" Keyboard="Email" TextColor="White" PlaceholderColor="{StaticResource FirdaAccentLightBlue}" BackgroundColor="#18417F" />
+                        <Entry x:Name="PasswordEntry" Placeholder="🔐 Passord" IsPassword="True" TextColor="White" PlaceholderColor="{StaticResource FirdaAccentLightBlue}" BackgroundColor="#18417F" ReturnType="Go" Completed="OnLoginTriggered" />
+                        <Button x:Name="LoginButton" Text="Logg inn" Clicked="OnLoginClicked" HorizontalOptions="Fill" BackgroundColor="#1c2251" TextColor="White" BorderColor="{StaticResource FirdaAccentLightBlue}" BorderWidth="1"/>
+                        <Button x:Name="RegisterButton" Text="Registrer ny brukar" Clicked="OnRegisterClicked" HorizontalOptions="Fill" BackgroundColor="Transparent" TextColor="{StaticResource FirdaAccentLightBlue}"/>
+                    </VerticalStackLayout>
+                </Border>
+                <Label Text="© Firda Seafood Group" BackgroundColor="Transparent" TextColor="LightGray" FontSize="12" HorizontalOptions="Center" VerticalOptions="End" Margin="0,10,0,20"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Border x:Name="LoadingOverlay"
+                IsVisible="False"
+                BackgroundColor="#80000000">
+            <VerticalStackLayout Spacing="15"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="Center">
+                <ActivityIndicator x:Name="LoadingSpinner"
+                                   IsRunning="False"
+                                   Color="{StaticResource FirdaAccentLightBlue}" />
+                <Label x:Name="LoadingLabel"
+                       Text="Loggar inn..."
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </Border>
+
+        <controls:LoadingIndicator x:Name="BusyIndicator" InputTransparent="True" />
+        <controls:CustomAlert x:Name="AlertView" InputTransparent="True" />
+    </Grid>
+</ContentPage>

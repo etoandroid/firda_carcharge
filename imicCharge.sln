@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "imicCharge.API", "imicCharge.API\imicCharge.API.csproj", "{750A3A0E-1634-4A96-9516-4F4FF86837BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "imicCharge.APP", "imicCharge.APP\imicCharge.APP.csproj", "{E82308B2-7362-4DD2-985C-86CCB77BCE0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "imicCharge.Admin", "imicCharge.Admin\imicCharge.Admin.csproj", "{9E285F76-1A55-4D84-AA78-C1260FB50B85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{750A3A0E-1634-4A96-9516-4F4FF86837BB}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{750A3A0E-1634-4A96-9516-4F4FF86837BB}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{750A3A0E-1634-4A96-9516-4F4FF86837BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{750A3A0E-1634-4A96-9516-4F4FF86837BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E82308B2-7362-4DD2-985C-86CCB77BCE0E}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{E82308B2-7362-4DD2-985C-86CCB77BCE0E}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{E82308B2-7362-4DD2-985C-86CCB77BCE0E}.Debug|Any CPU.Deploy.0 = Release|Any CPU
+		{E82308B2-7362-4DD2-985C-86CCB77BCE0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E82308B2-7362-4DD2-985C-86CCB77BCE0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E285F76-1A55-4D84-AA78-C1260FB50B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E285F76-1A55-4D84-AA78-C1260FB50B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E285F76-1A55-4D84-AA78-C1260FB50B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E285F76-1A55-4D84-AA78-C1260FB50B85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {436DF41F-6C59-447E-AFF3-02F0F5527046}
+	EndGlobalSection
+EndGlobal

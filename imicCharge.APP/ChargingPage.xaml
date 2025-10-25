@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="imicCharge.APP.ChargingPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource FirdaPrimaryDarkBlue}">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+
+        <!-- Header -->
+        <Label 
+            Text="Lading pågår..."
+            FontSize="32"
+            FontAttributes="Bold"
+            TextColor="White"
+            HorizontalOptions="Center"
+            Margin="0,40,0,20"/>
+
+        <!-- Main content -->
+        <VerticalStackLayout Grid.Row="1" Spacing="25" VerticalOptions="Center" Padding="30,0">
+
+            <!-- Visual battery indicator -->
+            <Border Stroke="{StaticResource FirdaAccentLightBlue}" StrokeThickness="2" BackgroundColor="Transparent" Padding="10" HorizontalOptions="Center">
+                <Grid WidthRequest="150" HeightRequest="70">
+                    <BoxView x:Name="BatteryProgress" BackgroundColor="{StaticResource FirdaAccentLightBlue}" HorizontalOptions="Start" WidthRequest="0"/>
+                    <Label x:Name="PowerUsageLabel" Text="0 kW" TextColor="White" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <!-- Charging details -->
+            <Border Padding="20" StrokeShape="RoundRectangle 10,10,10,10" BackgroundColor="#2a306c" StrokeThickness="0">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto, Auto" RowSpacing="15" ColumnSpacing="10">
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="Forbruk (kWt)" TextColor="LightGray" HorizontalOptions="Center"/>
+                    <Label x:Name="KwhLabel" Grid.Row="1" Grid.Column="0" Text="0,00" FontSize="21" TextColor="White" HorizontalOptions="Center"/>
+
+                    <Label Grid.Row="0" Grid.Column="1" Text="Gjenståande Saldo" TextColor="LightGray" HorizontalOptions="Center"/>
+                    <Label x:Name="BalanceLabel" Grid.Row="1" Grid.Column="1" Text="--- kr" FontSize="21" TextColor="White" HorizontalOptions="Center"/>
+                </Grid>
+            </Border>
+        </VerticalStackLayout>
+
+        <!-- Stop button at the bottom -->
+        <Button 
+            Grid.Row="2"
+            x:Name="StopChargeButton"
+            Text="Stopp Lading"
+            Clicked="OnStopChargeClicked"
+            HorizontalOptions="Fill"
+            BackgroundColor="DarkRed"
+            TextColor="White"
+            Margin="30,0,30,40"/>
+    </Grid>
+</ContentPage>

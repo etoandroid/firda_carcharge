@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:imicCharge.APP"
+             xmlns:controls="clr-namespace:imicCharge.APP.Controls"
+             x:Class="imicCharge.APP.MainPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource FirdaPrimaryDarkBlue}">
+
+    <Grid>
+
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="3">
+
+                <Image Source="logo_firda.png" HeightRequest="70" Margin="0,30,0,10" HorizontalOptions="Center" SemanticProperties.Description="Firda Seafood logo" />
+                <Label Text="Firda CarCharge" TextColor="White" FontSize="19" Margin="0" FontAttributes="Bold" HorizontalOptions="Center" />
+                <Label Text="Ei ladeteneste frå Firda Seafood Group" TextColor="Gray" FontSize="12" Margin="0,0,0,10" FontAttributes="None" HorizontalOptions="Center" />
+
+                <Border Padding="0,0,0,10" Margin="0,0,0,10" StrokeShape="RoundRectangle 10,10,10,10" BackgroundColor="#2a306c" StrokeThickness="0">
+                    <VerticalStackLayout Spacing="10" Margin="3" Padding="0">
+                        <Label Text="Min konto" TextColor="White" FontSize="19" Margin="0" FontAttributes="Bold" HorizontalOptions="Center" />
+                        <HorizontalStackLayout HorizontalOptions="Center" Margin="0" Padding="0">
+                            <Label Text="Innlogga som:" 
+                                   Margin="0,0,10,0" 
+                                   FontSize="14" 
+                                   TextColor="White" 
+                                   VerticalOptions="Center" 
+                                   HorizontalOptions="Start" />
+                            <Label x:Name="AccountName" 
+                                   Text="" 
+                                   Margin="0,0,10,0" 
+                                   FontSize="14" 
+                                   VerticalOptions="Center" 
+                                   TextColor="White" />
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                            <Label Text="Din saldo:" 
+                                   FontSize="14" 
+                                   TextColor="White" 
+                                   VerticalOptions="Center" />
+                            <Label x:Name="BalanceLabel" 
+                                   Text="--- kr" 
+                                   FontSize="14" 
+                                   VerticalOptions="Center" 
+                                   TextColor="White" />
+                            <Button Text="👉 Fyll på konto" 
+                                    x:Name="TopUpButton" 
+                                    HorizontalOptions="End"
+                                    VerticalOptions="Center"
+                                    BackgroundColor="{StaticResource FirdaAccentLightBlue}"
+                                    CornerRadius="3"
+                                    TextColor="White"
+                                    FontSize="13"
+                                    Padding="7,4"
+                                    MinimumHeightRequest="0"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+                <Border Padding="20" StrokeShape="RoundRectangle 10,10,10,10" BackgroundColor="#2a306c" StrokeThickness="0">
+                    <VerticalStackLayout Spacing="15">
+                        <Grid ColumnDefinitions="*, Auto" ColumnSpacing="15">
+                            <Picker x:Name="ChargerPicker"
+                                    Grid.Column="0"
+                                    Title="Vel ein ladar"
+                                    ItemDisplayBinding="{Binding Name}"
+                                    TextColor="White"
+                                    TitleColor="White"
+                                    BackgroundColor="#1C2251"/>
+
+                            <Button Text="👉 Start Lading"
+                                    x:Name="StartChargeButton"
+                                    Grid.Column="1"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="End"
+                                    BackgroundColor="{StaticResource FirdaAccentLightBlue}"
+                                    CornerRadius="3"
+                                    TextColor="White"
+                                    FontSize="13"
+                                    Padding="7,4"
+                                    MinimumHeightRequest="32"/>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+                <Button
+                    Grid.Row="2"
+                    x:Name="LogoutButton"
+                    Text="👈 Logg ut"
+                    Clicked="OnLogoutClicked"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="End"
+                    BackgroundColor="Transparent"
+                    BorderColor="{StaticResource FirdaAccentLightBlue}"
+                    BorderWidth="1"
+                    CornerRadius="3"
+                    TextColor="White"
+                    Margin="0,20,0,20"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <controls:LoadingIndicator x:Name="BusyIndicator" InputTransparent="True" />
+        <controls:CustomAlert x:Name="AlertView" InputTransparent="True" />
+        <controls:TopUpModal x:Name="TopUpDialog" InputTransparent="True" />
+    </Grid>
+</ContentPage>
